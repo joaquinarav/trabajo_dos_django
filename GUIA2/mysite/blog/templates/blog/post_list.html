@@ -1,0 +1,27 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    <title>blog django</title>
+    <link rel="stylesheet" href="static/css/blog.css">
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+</head>
+<body>
+   <div>
+       <h1><a href="/">blog django</a></h1>
+   </div> 
+
+   {% for post in posts %}
+     <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+     </div>
+   {% endfor %}
+</body>
+</html>
